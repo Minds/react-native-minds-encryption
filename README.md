@@ -1,4 +1,4 @@
-# react-native-minds-crypto
+# react-native-minds-encryption
 
 A native implementation of RSA encryption/decryption, sign/verify.
 Implementation is in PKCS1 for public
@@ -19,15 +19,15 @@ Verify
 
 ## Getting started
 
-`$ yarn add react-native-minds-crypto`
+`$ yarn add react-native-minds-encryption`
 
 or:
 
-`$ npm install react-native-minds-crypto --save`
+`$ npm install react-native-minds-encryption --save`
 
 ### Mostly automatic installation:
 
-`$ react-native link react-native-minds-crypto`
+`$ react-native link react-native-minds-encryption`
 
 ## iOS
 
@@ -60,7 +60,7 @@ Encryption.sign(secret, keys.private)
         console.log(valid);
       });
   });
-
+```
 
 ## Credit
 
