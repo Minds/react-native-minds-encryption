@@ -40,7 +40,10 @@ typedef void (^SecKeyPerformBlock)(SecKeyRef key);
                               (id)kSecAttrKeySizeInBits: @2048,
                               };
     CFErrorRef error = NULL;
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:privateKey options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    NSMutableData  *data = [[NSMutableData  alloc] initWithBase64EncodedString:privateKey options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    // convert from pkcs8 to pkcs1 (just strip first 26 bytes do the trick!)
+    [data replaceBytesInRange:NSMakeRange(0, 26) withBytes:NULL length:0];
+
     SecKeyRef key = SecKeyCreateWithData((__bridge CFDataRef)data,
                                          (__bridge CFDictionaryRef)options,
                                          &error);

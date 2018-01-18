@@ -13,7 +13,7 @@
 static NSString *publicTag = @"PUBLIC";
 static NSString *privateTag = @"PRIVATE";
 static NSString *publicRsaTag = @"RSA PUBLIC";
-static NSString *privateRsaTag = @"RSA PRIVATE";
+static NSString *privateRsaTag = @"PRIVATE";
 
 + (NSString *)PEMFormattedPublicKey:(NSData *)publicKeyData {
     NSMutableData * encodedKey = [[NSMutableData alloc] init];
